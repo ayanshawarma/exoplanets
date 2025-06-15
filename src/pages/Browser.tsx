@@ -6,7 +6,7 @@ export default function BrowserPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}/exoplanets.json`)
+    fetch(`/exoplanets.json`)
       .then((r) => r.json())
       .then((data: Exoplanet[]) => {
         setPlanets(data);
