@@ -9,14 +9,14 @@ export default function App() {
         <h1 className="text-2xl font-bold">Star</h1>
         <nav className="space-x-4">
           <Link to="/">Sky</Link>
-          <Link to="/exoplanets">Exoplanets</Link>
+          <Link to="/list">Exoplanets</Link>
         </nav>
       </header>
 
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<SkyView />} />
-          <Route path="/exoplanets" element={<BrowserPage />} />
+          <Route path="list" element={<BrowserPage />} />
         </Routes>
       </main>
     </div>

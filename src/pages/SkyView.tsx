@@ -44,7 +44,7 @@ export default function SkyView() {
 
   // Load static JSON
   useEffect(() => {
-    fetch("/data/exoplanets.json")
+    fetch(`${import.meta.env.BASE_URL}/exoplanets.json`)
       .then((r) => r.json())
       .then((data: Exoplanet[]) => {
         setPlanets(data);
@@ -56,7 +56,9 @@ export default function SkyView() {
   useEffect(() => {
     // Place your audio files in public/audio/
     const bg = new Audio(
-      "/audio/cinematic-ambient-interstellar-music-153570.mp3"
+      `${
+        import.meta.env.BASE_URL
+      }/cinematic-ambient-interstellar-music-153570.mp3`
     );
     bg.loop = true;
     bg.volume = 0.3;
@@ -257,8 +259,8 @@ export default function SkyView() {
         <Tooltip
           x={pointerPos.x}
           y={pointerPos.y}
-          name={planets[hoveredIdx].pl_name}
-          mass={planets[hoveredIdx].pl_masse}
+          name={planets[hoveredIdx]?.pl_name}
+          mass={planets[hoveredIdx]?.pl_masse}
         />
       )}
       {selectedIdx !== null && (
